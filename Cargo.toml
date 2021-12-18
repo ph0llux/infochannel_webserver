@@ -1,0 +1,16 @@
+[package]
+name = "infochannel_webserver"
+version = "0.1.0"
+authors = ["ph0llux <ph0llux@pm.me>"]
+edition = "2021"
+
+[[bin]]
+name = "infochannel_webserver"
+path = "src/bin/main.rs"
+doc = false
+
+[dependencies]
+
+[dependencies.rocket]
+version = "0.5.0-rc.1"
+features = [ "json", "secrets" ]
