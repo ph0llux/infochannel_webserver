@@ -4,6 +4,7 @@
 // - STD
 use std::fs::{read_dir, read_to_string};
 use std::path::PathBuf;
+use rocket::fs::{FileServer, relative};
 
 // - external
 use rocket::serde::{
@@ -48,7 +49,9 @@ async fn datecontrol() -> Json<Vec<DatecontrolData>> {
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/api", routes![datecontrol])
+    rocket::build()
+    .mount("/", FileServer::from(relative!("dashboard")))
+    .mount("/api", routes![datecontrol])
 }
 
 const DATECONTROL_FILE_DIR: &str = "assets";
