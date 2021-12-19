@@ -33,6 +33,17 @@ pub struct DatecontrolData {
     timestamp: i64
 }
 
+#[derive(Serialize, Deserialize)]
+#[serde(crate = "rocket::serde")]
+pub struct WGClient {
+    name: String,
+    pub_key: String,
+    creation_date: String,
+    bytes_sent: String,
+    bytes_received: String,
+    latest_handshake: String,
+}
+
 /// returns a json in following format:
 /// ```
 /// {
