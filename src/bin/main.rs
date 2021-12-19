@@ -50,7 +50,7 @@ async fn datecontrol() -> Json<Vec<DatecontrolData>> {
 #[launch]
 fn rocket() -> _ {
     rocket::build()
-    .mount("/", FileServer::from(relative!("dashboard")))
+    .mount("/", FileServer::from(relative!("dashboard/build/web")))
     .mount("/api", routes![datecontrol])
 }
 
