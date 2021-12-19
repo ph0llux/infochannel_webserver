@@ -1,4 +1,5 @@
 pub(crate) const DATECONTROL_FILE_DIR: &str = "assets/datecontrol";
+pub(crate) const FREE_SPACE_FILE: &str = "assets/size_state/free_space";
 
 //SQL_STATEMENTS;
 pub(crate) const SQL_ADD_NEWSFEED: &str = include_str!("../SQL_Statements/add_newsfeed.sql");

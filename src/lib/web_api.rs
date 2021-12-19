@@ -96,3 +96,15 @@ pub async fn get_all_newsfeeds(conn: NewsDatabase) -> Json<Vec<NewsFeed>> {
     let result = conn.run(move |c| NewsFeed::get_all_newsfeeds(c));
     Json::from(result.await.unwrap())
 }
+
+/// returns a json in following format (free space in bytes):
+/// ```
+/// {
+///     "free_space" : 2250445385728
+/// }
+/// ```
+#[get("/get_free_space")]
+pub async fn get_free_space() -> Json<i64> {
+    let free_space: i64 = read_to_string(FREE_SPACE_FILE).unwrap().parse().unwrap();
+    Json::from(free_space)
+}
