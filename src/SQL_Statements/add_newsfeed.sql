@@ -1,0 +1,1 @@
+INSERT INTO "feeds" ("timestamp", "headline", "content", "status") VALUES (?1, ?2, ?3, ?4);

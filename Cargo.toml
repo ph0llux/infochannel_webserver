@@ -4,13 +4,25 @@ version = "0.1.0"
 authors = ["ph0llux <ph0llux@pm.me>"]
 edition = "2021"
 
+[lib]
+name = "lib"
+path = "src/lib/mod.rs"
+test = true
+bench = true
+doc = true
+edition = "2021"
+crate-type = ["lib"]
+
 [[bin]]
 name = "infochannel_webserver"
 path = "src/bin/main.rs"
 doc = false
 
-[dependencies]
-
 [dependencies.rocket]
 version = "0.5.0-rc.1"
 features = [ "json", "secrets" ]
+
+[dependencies.rocket_sync_db_pools]
+version = "0.1.0-rc.1"
+default-features = false
+features = [ "sqlite_pool" ]

@@ -20,3 +20,6 @@ ctrlc = true
 signals = ["term", "hup"]
 #grace = 5
 #mercy = 5
+
+[global.databases.news]
+url = "./assets/news.sqlite"

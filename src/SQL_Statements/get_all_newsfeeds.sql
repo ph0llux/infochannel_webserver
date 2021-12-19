@@ -1,0 +1,1 @@
+SELECT "timestamp", "headline", "content", "status" FROM "feeds";

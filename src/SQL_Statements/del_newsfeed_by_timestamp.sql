@@ -1,0 +1,1 @@
+DELETE FROM "feeds" where "timestamp" = ?1;
