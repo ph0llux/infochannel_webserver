@@ -22,4 +22,4 @@ signals = ["term", "hup"]
 #mercy = 5
 
 [global.databases.news]
-url = "./assets/news.sqlite"
+url = "./assets/dbs/news.sqlite"
