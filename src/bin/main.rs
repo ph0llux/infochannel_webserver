@@ -20,6 +20,6 @@ fn rocket() -> _ {
 
     rocket::build()
     .mount("/", FileServer::from(fileserver_path))
-    .mount("/api", routes![datecontrol, add_newsfeed, get_all_newsfeeds])
+    .mount("/api", routes![datecontrol, add_newsfeed, get_all_newsfeeds, public_ip])
     .attach(NewsDatabase::fairing())
 }
